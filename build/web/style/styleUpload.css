@@ -1,0 +1,79 @@
+.formUploadMusica {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    max-width: 70%;
+    margin: 2% auto;
+    padding: 5%;
+}
+
+#uploadMp3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 100%;
+}
+
+.opcoesForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    margin-bottom: 3%;
+    
+    width: 100%;
+}
+
+.opcoesForm label {
+    text-align: left;
+}
+
+.opcoesForm > label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+#estilos, #artista, #nome, #fileMusic {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+    font-size: 1em;
+}
+
+#estilos option {
+    font-size: 1.1em;
+    background-color: #90aaff;
+    color: #000000;
+}
+
+#estilos option:hover {
+    background-color: #ffc3f4 !important;
+    color: #fff;
+}
+
+.title {
+    font-family: cursive;
+    
+    margin-bottom: 5%;
+}
+
+#btnEnviar {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#btnEnviar:hover {
+    background-color: #0056b3;
+}

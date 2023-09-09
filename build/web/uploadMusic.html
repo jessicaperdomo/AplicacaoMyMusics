@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="index_controller.js" type="text/javascript"></script>
+
+        <title>MyMusics</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style/styleGlobal.css" />
+        <link rel="stylesheet" type="text/css" href="style/styleUpload.css" />
+    </head>
+    <body>
+        <nav class="navbar">
+            <ul class="listaOptions">
+                <li class="item">
+                    <a href="index.html"><img class="logo_navbar" src="assets/home.svg" alt="Icon-Home">HOME</a>
+                </li>
+                <li class="item">
+                    <a href="buscarMusic.jsp"><img class="logo_navbar" src="assets/lupaNav.svg" alt="Icon-Play">BUSCAR</a>
+                </li>
+                <li class="item">
+                    <a href="#"><img class="logo_navbar" src="assets/upload.svg" alt="Icon-Upload">ENVIAR MÚSICA</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="formUploadMusica">
+            <h1 class="title">Enviar música</h1>
+            <form id="uploadMp3" method="POST" enctype="multipart/form-data" onsubmit="upload_musica()">
+                <div class="opcoesForm custom-select">
+                    <label for="estilos">Selecione um estilo musical:</label>
+                    <select name="estilos" id="estilos">
+                        <option class="selectOption" value="semSelecionar">Selecione uma opção</option>
+                        <option class="selectOption" value="sertanejo">Sertanejo</option>
+                        <option class="selectOption" value="sertanejo">Pop</option>
+                        <option class="selectOption" value="sertanejo">Funk</option>
+                        <option class="selectOption" value="rock nacional">Rock Nacional</option>
+                        <option class="selectOption" value="rock internacional">Rock Internacional</option>
+                        <option class="selectOption" value="samba">Samba</option>
+                    </select>
+                </div>
+                <div class="opcoesForm">
+                    <label for="nome">Digite o nome da música:</label>
+                    <input type="text" name="nome" id="nome" placeholder="Informe o nome da música"/>
+                </div>
+                <div class="opcoesForm">
+                    <label for="artista">Digite o nome do artista:</label>
+                    <input type="text" name="artista" id="artista" placeholder="Informe o nome do artista"/>
+                </div>
+                <div class="opcoesForm">
+                    <label for="fileMusic">Selecione um arquivo mp3:</label>
+                    <input id="fileMusic" type="file" name="arquivo"/>
+                </div>
+                <button id="btnEnviar" type="submit" class="btn">Enviar</button>
+            </form>
+            <div id="feedback"></div>
+        </div>
+        <footer>
+            <p>@MyMusic - Jessica e Leonardo - 2023</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+.formBuscarMusica{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    max-width: 70%;
+    margin: 2% auto;
+    padding: 5%;
+}
+
+.formBusca {
+    margin-bottom: 10%;
+}
+
+.formBusca label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+p,h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+h2 {
+    margin-bottom: 5%;
+}
+
+.caixaBusca {
+    border: 1px #acacac dashed;
+    
+    border-radius: 500px;
+    width: 80vw;
+    
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#pesquisaM {
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    
+    width: 70%;
+    
+    font-size: 1em;
+    border: none;
+}
+
+#pesquisaM:focus {
+    outline: none;
+}
+
+.gridMusicas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.music {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.conteudo-musica {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.info-musica {
+    margin: 0 10px;
+}
+
+.titulo-musica {
+    font-weight: bold;
+}
+
+.artista-musica {
+    color: #777;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+audio {
+    display: none;
+}
