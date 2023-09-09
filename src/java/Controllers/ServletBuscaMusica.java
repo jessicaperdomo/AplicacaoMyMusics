@@ -22,14 +22,21 @@ public class ServletBuscaMusica extends HttpServlet {
             chave="";
         
         try (PrintWriter out = response.getWriter()) {
+           
+            File pastaweb = new File(getServletContext().getRealPath("/"));
+            System.out.println("Caminho absoluto dos arquivos: " + pastaweb.getAbsolutePath());
             
-            File pastaweb=new File(request.getServletContext().getRealPath(""));
-            
-            for (File file : pastaweb.listFiles())
-                if(file.isFile() && file.getName().endsWith("mp3"))
-                    if(file.getName().toUpperCase().contains(chave.toUpperCase()))
-                      res+=file.getName()+"#";
-            
+            for (File file : pastaweb.listFiles()){
+                
+                System.out.println("Caminho absoluto dos arquivos: " + pastaweb.getAbsolutePath());
+                if(file.isFile() && file.getName().endsWith("mp3")){
+                   if(file.getName().toUpperCase().contains(chave.toUpperCase())){
+                        res+=file.getName()+"#";
+                    } 
+                }
+                    
+            }
+   
             out.println(res);
         }
     }
