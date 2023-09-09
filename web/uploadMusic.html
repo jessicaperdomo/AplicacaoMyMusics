@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="index_controller.js" type="text/javascript"></script>
 
         <title>MyMusics</title>
 
@@ -24,7 +23,7 @@
                 </li>
             </ul>
         </nav>
-        <div class="formUploadMusica">
+        <div class="formUploadMusica">  
             <h1 class="title">Enviar música</h1>
             <form id="uploadMp3" method="POST" enctype="multipart/form-data" onsubmit="upload_musica()">
                 <div class="opcoesForm custom-select">
@@ -43,10 +42,16 @@
                     <label for="nome">Digite o nome da música:</label>
                     <input type="text" name="nome" id="nome" placeholder="Informe o nome da música"/>
                 </div>
+                <p class="error-container">
+                    <span class="text-danger" id="nomeError"></span>
+                </p>
                 <div class="opcoesForm">
                     <label for="artista">Digite o nome do artista:</label>
                     <input type="text" name="artista" id="artista" placeholder="Informe o nome do artista"/>
                 </div>
+                <p class="error-container">
+                    <span class="text-danger" id="artistaError"></span>
+                </p>
                 <div class="opcoesForm">
                     <label for="fileMusic">Selecione um arquivo mp3:</label>
                     <input id="fileMusic" type="file" name="arquivo"/>
@@ -58,5 +63,6 @@
         <footer>
             <p>@MyMusic - Jessica e Leonardo - 2023</p>
         </footer>
+        <script src="index_controller.js" type="text/javascript"></script>
     </body>
 </html>

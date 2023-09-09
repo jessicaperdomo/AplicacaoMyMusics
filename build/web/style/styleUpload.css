@@ -22,9 +22,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
-    margin-bottom: 3%;
-    
+    margin-top: 2%;
     width: 100%;
 }
 
@@ -75,5 +73,18 @@
 }
 
 #btnEnviar:hover {
-    background-color: #0056b3;
+    background-color: #0056b3 ;
+}
+
+.text-danger {
+    text-align: left !important;
+    color: red;
+}
+
+.error-container {
+    position: relative;
+}
+  
+.error-border {
+    border: 1px solid red !important;
 }
