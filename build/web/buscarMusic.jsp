@@ -51,5 +51,6 @@
         <footer>
             <p>@MyMusic - Jessica e Leonardo - 2023</p>
         </footer>
+        <script src="c_controller.js" type="text/javascript"></script>
     </body>
 </html>
