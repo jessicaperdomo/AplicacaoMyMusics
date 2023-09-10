@@ -3,6 +3,29 @@ document.addEventListener("DOMContentLoaded", buscarMusica);
 var pesq = document.getElementById("pesquisaM");
 pesq.addEventListener("keyup", buscarMusica);
 
+function criarBotaoPlayPause(audio) {
+    var playPauseButton = document.createElement('button');
+    playPauseButton.classList.add('play-pause-button');
+    
+    var playImg = document.createElement('img');
+    
+    playImg.src = 'assets/play.svg';
+    playImg.alt = 'PlayPauseMusic';
+    playPauseButton.appendChild(playImg);
+
+    playPauseButton.addEventListener('click', function () {
+        if (audio.paused) {
+            audio.play();
+            playImg.src = 'assets/pause.svg';
+        } else {
+            audio.pause();
+            playImg.src = 'assets/play.svg';
+        }
+    });
+
+    return playPauseButton;
+}
+
 function buscarMusica() {
     event.preventDefault();
     let chave = document.getElementById("pesquisaM").value;
@@ -19,28 +42,24 @@ function buscarMusica() {
                 var nomeMusica = musicElements[i].trim();
 
                 if (nomeMusica !== "") {
+                    var dados = nomeMusica.split("&");
+                    
                     var musicaElement = document.createElement('div');
                     musicaElement.classList.add('music');
 
                     var conteudoMusica = document.createElement('div');
                     conteudoMusica.classList.add('conteudo-musica');
 
-                    var playButton = document.createElement('button');
-                    var playImg = document.createElement('img');
-                    playImg.src = 'assets/play.svg';
-                    playImg.alt = 'PlayPauseMusic';
-                    playButton.appendChild(playImg);
-
                     var infoMusica = document.createElement('div');
                     infoMusica.classList.add('info-musica');
 
                     var tituloMusica = document.createElement('p');
                     tituloMusica.classList.add('titulo-musica');
-                    tituloMusica.textContent = nomeMusica;
+                    tituloMusica.textContent = dados[1];
 
                     var artistaMusica = document.createElement('p');
                     artistaMusica.classList.add('artista-musica');
-                    artistaMusica.textContent = 'Artista';
+                    artistaMusica.textContent = dados[2].split(".")[0];
 
                     infoMusica.appendChild(tituloMusica);
                     infoMusica.appendChild(artistaMusica);
@@ -51,16 +70,17 @@ function buscarMusica() {
                     favoritoImg.alt = 'FavoriteMusic';
                     favoritoButton.appendChild(favoritoImg);
 
+                    var audioElement = document.createElement('audio');
+                    audioElement.src = nomeMusica;
+                    
+                    var playButton = criarBotaoPlayPause(audioElement);
+
                     conteudoMusica.appendChild(playButton);
                     conteudoMusica.appendChild(infoMusica);
                     conteudoMusica.appendChild(favoritoButton);
-
-                    var audioElement = document.createElement('audio');
-                    audioElement.src = nomeMusica;
-
+                    
                     musicaElement.appendChild(conteudoMusica);
                     musicaElement.appendChild(audioElement);
-
                     musicContainer.appendChild(musicaElement);
                 }
             }

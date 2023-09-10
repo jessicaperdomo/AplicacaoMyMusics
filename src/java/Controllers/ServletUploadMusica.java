@@ -40,7 +40,7 @@ public class ServletUploadMusica extends HttpServlet {
         InputStream filecontent = null;
             
         try {  
-            String novonome=estilo+"_"+nome+"_"+artista+".mp3";
+            String novonome=estilo+"&"+nome+"&"+artista+".mp3";
                 
             out = new FileOutputStream(new File(getServletContext().getRealPath("/")+"/"+novonome));
             
