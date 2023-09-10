@@ -1,2 +1,5 @@
 # AplicacaoMyMusics
-Para enviar e receber musicas.Usando JSP.
+Para enviar e receber musicas.
+Utilizando:
+- Java/JSP.
+- Html/Css/Js
