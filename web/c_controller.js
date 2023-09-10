@@ -26,6 +26,27 @@ function criarBotaoPlayPause(audio) {
     return playPauseButton;
 }
 
+function criarBotaoFavorito() {
+    var favBtn = document.createElement('button');
+    favBtn.classList.add('mudaFavorito');
+    
+    var favImg = document.createElement('img');
+    
+    favImg.src = 'assets/favoritoNO.svg';
+    favImg.alt = 'mudaFavorito';
+    favBtn.appendChild(favImg);
+
+    favBtn.addEventListener('click', function () {
+        if (favImg.src.includes('assets/favoritoYES.svg')) {
+            favImg.src = 'assets/favoritoNO.svg';
+        } else {
+            favImg.src = 'assets/favoritoYES.svg';
+        }
+    });
+
+    return favBtn;
+}
+
 function buscarMusica() {
     event.preventDefault();
     let chave = document.getElementById("pesquisaM").value;
@@ -64,11 +85,7 @@ function buscarMusica() {
                     infoMusica.appendChild(tituloMusica);
                     infoMusica.appendChild(artistaMusica);
 
-                    var favoritoButton = document.createElement('button');
-                    var favoritoImg = document.createElement('img');
-                    favoritoImg.src = 'assets/favoritoNO.svg';
-                    favoritoImg.alt = 'FavoriteMusic';
-                    favoritoButton.appendChild(favoritoImg);
+                    var favoritoButton = criarBotaoFavorito();
 
                     var audioElement = document.createElement('audio');
                     audioElement.src = nomeMusica;

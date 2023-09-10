@@ -41,7 +41,7 @@
                             <p class="artista-musica">Artista</p>
                         </div>
                         <button>
-                            <img src="assets/favoritoNO.svg" alt="FavoriteMusic">
+                            <img id="mudaFavorito" src="assets/favoritoNO.svg" alt="FavoriteMusic">
                         </button>
                     </div>
                     <audio src=""></audio>
