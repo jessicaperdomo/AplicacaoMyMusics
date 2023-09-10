@@ -64,8 +64,26 @@ function upload_musica(){
     
     fetch("servlet_upload",{ method: 'post', body: dados})
         .then(response=>response.text())
-        .then(mens=>{document.getElementById("feedback").innerHTML = mens})
-        .catch(error=>{document.getElementById("feedback").innerHTML = error})
+        .then(mens=>{showFeedback("Salvo com sucesso!", true)})
+        .catch(error=>{showFeedback("Não conseguimos salvar!", false)})
 
     document.getElementById("uploadMp3").reset();
+}
+
+function showFeedback(message, isSuccess) {
+    var feedbackDiv = document.getElementById("feedback");
+    
+    feedbackDiv.textContent = message;
+    
+    if (isSuccess) {
+        feedbackDiv.style.backgroundColor = "#4CAF50";
+    } else {
+        feedbackDiv.style.backgroundColor = "#FF5733";
+    }
+    
+    feedbackDiv.style.display = "block"; 
+    
+    setTimeout(function() {
+        feedbackDiv.style.display = "none";
+    }, 5000);
 }
